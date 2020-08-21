@@ -29,9 +29,17 @@ Note:
 
 */
 
+// JavaScript does not have a native hash set. JS has a Set object.
+// However, we can simulate it by the use of a linked lists and a bucket. 
+// HashSets contain only unique values 
+
 /**
  * Initialize your data structure here.
  */
+
+
+
+
 var MyHashSet = function() {
     
 };

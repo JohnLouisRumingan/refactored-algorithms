@@ -24,3 +24,17 @@
         }
     }
  }
+
+
+
+ function twoSumFaster(nums, target){
+
+    let allNums = {}; //will hold element:index as key-value pairs
+
+    for(let i=0; i<nums.length; i++){
+        const diff = target - nums[i];
+        if(allNums[diff]) return [allNums[diff], i];
+        // placing it here ensures that it is not referenced above. Same element cannot be used twice.
+        allNums[nums[i]] = i;
+    }
+ }

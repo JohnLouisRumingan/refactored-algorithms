@@ -37,3 +37,57 @@ Constraints:
 
 */
 
+/**
+ * @param {number[]} prices
+ * @return {number}
+ */
+var maxProfit = function(prices) {
+    
+    let profit = 0;
+    let currentStock = null;
+    
+    for(let i=1; i<prices.length; i++){
+        
+        //start at i=1 since we know it must be a peak or valley
+        //if currentNum < prevNum, we know it is a peak and must sell the stock at prevNum if we have one
+        //if it is a valley and we don't currently have a stock, buy a prevStock.
+        
+        let curPrice = prices[i];
+        let prevPrice = prices[i-1];
+        const finalStockIndex = prices.length-1;
+        
+        console.log("currentPrice", curPrice, "previous price", prevPrice);
+        
+        if(prevPrice < curPrice){
+            
+            if(currentStock != null && i == finalStockIndex){
+                console.log("final stock index case with held stock", currentStock, prices[i])
+                profit += prices[i] - currentStock;
+            }
+            else if(currentStock == null && i == finalStockIndex){
+                    console.log("final stock index case without held stock", currentStock, prices[i])
+                    currentStock = prevPrice;
+                    profit += prices[i] - currentStock;
+            }
+            else if(currentStock == null){
+                currentStock = prevPrice;
+            }
+        }
+        else if(prevPrice > curPrice){
+            if(currentStock != null){
+                profit += (prevPrice - currentStock);
+                console.log("selling stock current stock:", currentStock, "profit:", profit);
+                currentStock = null;
+                console.log("sold stock", currentStock)
+            }
+        }
+        else if(prevPrice == curPrice && i == finalStockIndex && currentStock!= null){
+            console.log("final stock index case with held stock and equal to previous", currentStock, prices[i])
+            profit += prices[i] - currentStock;
+        }
+        console.log("profit", profit, "current stock held", currentStock)
+    }
+    
+    
+    return profit;
+};

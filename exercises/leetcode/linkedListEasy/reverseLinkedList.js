@@ -11,8 +11,6 @@ Follow up:
 A linked list can be reversed either iteratively or recursively. Could you implement both?
 */
 
-// Iterative version
-
 /**
  * Definition for singly-linked list.
  * function ListNode(val, next) {
@@ -21,19 +19,13 @@ A linked list can be reversed either iteratively or recursively. Could you imple
  * }
  */
 
-
-/**
- * Definition for singly-linked list.
- * function ListNode(val, next) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.next = (next===undefined ? null : next)
- * }
- */
 
 /**
  * @param {ListNode} head
  * @return {ListNode}
  */
+
+ // Iterative version
 var reverseList = function(head) {
     
     //     traverse through linked list, storing the previous and current node until we reach the original null
@@ -56,3 +48,16 @@ var reverseList = function(head) {
     };
 
     // space O(1) time O(n)
+
+
+    //Recursive version 
+
+    var reverseList = function(head, prev = null){
+
+        if(!head) return head;
+
+        const next = head.next;
+        head.next = prev;
+
+        return next? reverseList(next, head) : head;
+    }

@@ -29,7 +29,7 @@ Could you do this in one pass?
  * @return {ListNode}
  */
 var removeNthFromEnd = function(head, n) {
-    
+
     let dummy = new ListNode(0);
     dummy.next = head;
     
@@ -47,8 +47,10 @@ var removeNthFromEnd = function(head, n) {
         first = first.next;
         second = second.next;
         
-        console.log("second", second)
     }
+
+    // could also declare a counter after line 38, then use an if/then with the counter to advance the second pointer
+    // 
     
 //     now second.next will just point to the second next node, skipping the "deleted" node
     second.next = second.next.next;

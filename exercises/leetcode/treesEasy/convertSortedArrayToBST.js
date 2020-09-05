@@ -29,6 +29,13 @@ One possible answer is: [0,-3,9,-10,null,5], which represents the following heig
  * @param {number[]} nums
  * @return {TreeNode}
  */
+
+function TreeNode(val, left, right) {
+       this.val = (val===undefined ? 0 : val)
+       this.left = (left===undefined ? null : left)
+       this.right = (right===undefined ? null : right)
+  }
+
 var sortedArrayToBST = function(nums) {
     
     // base cases:
@@ -50,4 +57,4 @@ var sortedArrayToBST = function(nums) {
     return root;
 };
 
-modules.exports = sortedArrayToBST;
+module.exports = sortedArrayToBST;

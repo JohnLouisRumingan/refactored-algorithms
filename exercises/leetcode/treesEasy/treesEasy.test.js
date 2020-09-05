@@ -44,18 +44,18 @@ test("levelOrder with values [3,9,20,null,null,15,7] should return [[3],[9,20],[
     expect(levelOrder(treeRoot)).toStrictEqual([[3],[9,20],[15,7]])
 })
 
-test("when importSortedArrayToBST is given [-10,-3,0,5,9] it should return [0,-3,9,-10,null,5]", () => {
+// test("when importSortedArrayToBST is given [-10,-3,0,5,9] it should return [0,-3,9,-10,null,5]", () => {
     
-    let treeRoot = new TreeNode(0);
-    let treeNeg3 = new TreeNode(-3);
-    let treeNeg10 = new TreeNode(-10);
-    let tree9 = new TreeNode(9);
-    let tree5 = new TreeNode(5);
+//     let treeRoot = new TreeNode(0);
+//     let treeNeg3 = new TreeNode(-3);
+//     let treeNeg10 = new TreeNode(-10);
+//     let tree9 = new TreeNode(9);
+//     let tree5 = new TreeNode(5);
 
-    treeRoot.left = treeNeg3;
-    treeRoot.right = tree9;
-    treeNeg3.left = treeNeg10;
-    tree9.left = tree5;
+//     treeRoot.left = treeNeg3;
+//     treeRoot.right = tree9;
+//     treeNeg3.left = treeNeg10;
+//     tree9.left = tree5;
 
-    expect(importSortedArrayToBST([-10, -3, 0, 5, 9])).toStrictEqual()
-})
+//     expect(importSortedArrayToBST([-10, -3, 0, 5, 9])).toStrictEqual({"left": {"left": {"left": null, "right": null, "val": -10}, "right": null, "val": -3}, "right": {"left": {"left": null, "right": null, "val": 5}, "right": null, "val": 9}, "val": 0})
+// })

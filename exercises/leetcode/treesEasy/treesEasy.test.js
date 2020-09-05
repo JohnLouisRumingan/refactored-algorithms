@@ -1,5 +1,6 @@
 const maxDepth = require("./maxDepthOfBinaryTree")
 const isValidBST = require("./validateBinarySearchTree")
+const levelOrder = require("./binaryTreeLevelOrderTraversal")
 
 function TreeNode(val, left, right) {
     this.val = (val===undefined ? 0 : val)
@@ -37,3 +38,7 @@ test('validateBST of binary tree with values [2, 1, 3] should return true', () =
 
     expect(isValidBST(treeRoot)).toBe(true);
 });
+
+test("levelOrder with values [3,9,20,null,null,15,7] should return [[3],[9,20],[15,7]]", () =>{
+    expect(levelOrder(treeRoot)).toStrictEqual([[3],[9,20],[15,7]])
+})

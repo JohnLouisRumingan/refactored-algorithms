@@ -42,3 +42,6 @@ return its depth = 3.
         else return (rDepth + 1);
     }
 };
+
+
+module.exports = maxDepth;

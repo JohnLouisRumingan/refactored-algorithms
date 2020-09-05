@@ -73,3 +73,6 @@ var isValidBST = function(root, min = null, max=null) {
     
     return (lNode && rNode);
 };
+
+
+module.exports = isValidBST;

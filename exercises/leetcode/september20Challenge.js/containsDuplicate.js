@@ -19,3 +19,28 @@ Input: nums = [1,5,9,1,5,9], k = 2, t = 3
 Output: false
 */
 
+var containsNearbyAlmostDuplicate = function(nums, k, t) {
+    
+    if(nums.length===0) return false;
+    
+//     two pointer approach, two pointer indices cannot differ by more than k 
+//     absolute value of the elements cannot differ by more than t
+    
+    let start = 0;
+    let end = 1;
+    
+    while(end !== nums.length){
+        
+        if(Math.abs(nums[end] - nums[start]) <= t) {
+            return true;
+        }
+        
+        if((end-start)==k){ start ++;}
+        
+        end++;
+    }
+    
+    return false;
+};
+
+module.exports = containsNearbyAlmostDuplicate;

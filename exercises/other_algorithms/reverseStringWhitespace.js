@@ -20,7 +20,7 @@ function reverseStringArray(arr){
     
     arr.push(" ");
 
-    console.log("reversed array:", arr)
+    // console.log("reversed array:", arr)
 
     let i = 0;
     let start = 0;
@@ -43,7 +43,7 @@ function reverseStringArray(arr){
 
     arr.pop();
 
-    console.log("double reversed",arr)
+    // console.log("double reversed",arr)
     return arr;
 }
 

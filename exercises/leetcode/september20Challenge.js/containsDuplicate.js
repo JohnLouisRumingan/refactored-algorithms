@@ -21,7 +21,7 @@ Output: false
 
 var containsNearbyAlmostDuplicate = function(nums, k, t) {
     
-    if(nums.length===0) return false;
+    if(nums.length <= 1) return false;
     
 //     two pointer approach, two pointer indices cannot differ by more than k 
 //     absolute value of the elements cannot differ by more than t
@@ -35,11 +35,12 @@ var containsNearbyAlmostDuplicate = function(nums, k, t) {
             return true;
         }
         
-        if((end-start)==k){ start ++;}
-        
-        end++;
+        if((end-start)==k){ 
+            start ++;
+            end = start+1;
+        }
+        else{end++;}
     }
-    
     return false;
 };
 

@@ -36,7 +36,7 @@ var isSymmetric = function(root){
 
         let qFront = q.shift();
 
-        console.log(qFront);
+        // console.log(qFront);
         
         let lNode = qFront.left;
         let rNode = qFront.right;

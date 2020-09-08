@@ -16,7 +16,3 @@ test('maxProfit returns 0 if given an array with length 1, seller can only buy b
 test('maxProfit returns 0 if there are no positive deltas in stock price', () => {
     expect(maxProfit([7,6,4,3,1])).toBe(0);
 })
-
-test('maxProfit returns 0 if there are no positive deltas in stock price', () => {
-    expect(maxProfit([7,6,4,3,1])).toBe(0);
-})

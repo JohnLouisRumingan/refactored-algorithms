@@ -29,22 +29,33 @@ var maxProfit = function(prices) {
     if(prices.length <= 0) return -1;
     if(prices.length === 1) return 0;
     
-    let profit=0;
+    // let profit=0;
 
-    // naive first-pass version:
-    for(let i=0; i<prices.length; i++){
-        let buyPrice = prices[i];
+    // // naive first-pass version:
+    // for(let i=0; i<prices.length; i++){
+    //     let buyPrice = prices[i];
         
-        for(let k=(i+1); k<prices.length; k++){
-            let sellPrice = prices[k];
-            let tempProfit = sellPrice - buyPrice;
-            if(tempProfit > profit){ profit = tempProfit;}
-        }
+    //     for(let k=(i+1); k<prices.length; k++){
+    //         let sellPrice = prices[k];
+    //         let tempProfit = sellPrice - buyPrice;
+    //         if(tempProfit > profit){ profit = tempProfit;}
+    //     }
+    // }
+    // return profit;
+
+    // we can instead have two variables where we record the current minPrice and the maxProfit
+
+    let minPrice = Number.MAX_SAFE_INTEGER;
+    let maxProfit = 0;
+
+    for(let i=0; i<prices.length; i++){
+
+        if(prices[i] < minPrice) {minPrice = prices[i];}
+        else if((prices[i] - minPrice) > maxProfit) {maxProfit = (prices[i] - minPrice)}
     }
 
-    // we can create an array of deltas to show difference between any two prices 
 
-    return profit;
+    return maxProfit;
 };
 
 module.exports = maxProfit;

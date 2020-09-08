@@ -1,5 +1,12 @@
 const containsNearbyAlmostDuplicate = require("./containsDuplicate")
 const wordPattern = require("./wordPattern")
+const sumRootToLeaf = require("./sumRootToLeafBinary")
+
+function TreeNode(val, left, right) {
+    this.val = (val===undefined ? 0 : val)
+    this.left = (left===undefined ? null : left)
+    this.right = (right===undefined ? null : right)
+}
 
 test('when containsDuplicate is given [1,2,2,3,4,5] k=3 t=0 it should return true', () => {
     expect(containsNearbyAlmostDuplicate([1,2,2,3,4,5], 3, 0)).toBe(true);
@@ -14,4 +21,23 @@ test('when wordPattern is given duplicate words or patterns that are not bijecti
     expect(wordPattern("abba", "dog cat cat fish")).toBe(false);
     expect(wordPattern("aaaa", "dog cat cat dog")).toBe(false);
     expect(wordPattern("abba", "dog dog dog dog")).toBe(false);
+})
+
+test('when sumRootToLeaf is given [1,0,1,0,1,0,1] it should return 22', ()=> {
+    let treeRoot = new TreeNode(1);
+    let tree01L = new TreeNode(0);
+    let tree01R = new TreeNode(1);
+    let tree10L = new TreeNode(0);
+    let tree11R = new TreeNode(1);
+    let tree20L = new TreeNode(0);
+    let tree21R = new TreeNode(1);
+    
+    treeRoot.left = tree01L;
+    treeRoot.right = tree01R;
+    tree01L.left = tree10L;
+    tree01L.right = tree11R;
+    tree01R.left = tree20L;
+    tree01R.right = tree21R;
+
+    expect(sumRootToLeaf(treeRoot)).toBe(22);
 })

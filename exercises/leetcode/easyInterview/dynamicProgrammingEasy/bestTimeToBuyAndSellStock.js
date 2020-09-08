@@ -25,7 +25,26 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
  * @return {number}
  */
 var maxProfit = function(prices) {
+
+    if(prices.length <= 0) return -1;
+    if(prices.length === 1) return 0;
     
+    let profit=0;
+
+    // naive first-pass version:
+    for(let i=0; i<prices.length; i++){
+        let buyPrice = prices[i];
+        
+        for(let k=(i+1); k<prices.length; k++){
+            let sellPrice = prices[k];
+            let tempProfit = sellPrice - buyPrice;
+            if(tempProfit > profit){ profit = tempProfit;}
+        }
+    }
+
+    // we can create an array of deltas to show difference between any two prices 
+
+    return profit;
 };
 
 module.exports = maxProfit;

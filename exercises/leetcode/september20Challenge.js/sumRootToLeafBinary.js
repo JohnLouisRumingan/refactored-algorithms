@@ -35,7 +35,7 @@ var sumRootToLeaf = function(root) {
     nodeTracker(root, routes);
     let sum = 0;   
     routes.forEach(value => (sum +=parseInt(value, 2)))
-    console.log(routes)
+    // can further decrease memory usage by using a reducer?
     
     return sum;
 };

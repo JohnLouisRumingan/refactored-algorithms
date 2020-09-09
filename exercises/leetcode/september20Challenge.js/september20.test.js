@@ -1,6 +1,7 @@
 const containsNearbyAlmostDuplicate = require("./containsDuplicate")
 const wordPattern = require("./wordPattern")
 const sumRootToLeaf = require("./sumRootToLeafBinary")
+const compareVersion = require("./compareVersionNumbers")
 
 function TreeNode(val, left, right) {
     this.val = (val===undefined ? 0 : val)
@@ -40,4 +41,24 @@ test('when sumRootToLeaf is given [1,0,1,0,1,0,1] it should return 22', ()=> {
     tree01R.right = tree21R;
 
     expect(sumRootToLeaf(treeRoot)).toBe(22);
+})
+
+test('when compareVersion is given 0.1 and 1.1 it returns -1', () =>{
+    expect(compareVersion("0.1", "1.1")).toBe(-1);
+})
+
+test('when compareVersion is given 1.0.1 and 1 it returns 1', () =>{
+    expect(compareVersion("1.0.1", "1")).toBe(1);
+})
+
+test('when compareVersion is given 7.5.2.4 and 7.5.3 it returns -1', () =>{
+    expect(compareVersion("7.5.2.4", "7.5.3")).toBe(-1);
+})
+
+test('when compareVersion is given 1.01 and 1.001 it returns 0', () =>{
+    expect(compareVersion("1.01", "1.001")).toBe(0);
+})
+
+test('when compareVersion is given 1.0 and 1.0.0 it returns 0', () =>{
+    expect(compareVersion("1.0", "1.0.0")).toBe(0);
 })

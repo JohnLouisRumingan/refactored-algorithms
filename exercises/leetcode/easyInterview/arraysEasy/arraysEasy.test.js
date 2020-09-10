@@ -1,6 +1,7 @@
 const singleNumber = require('./singleNumber');
 const rotate = require('./rotateArray');
 const intersect = require('./intersectionTwoArraysII');
+const twoSum = require('./twoSum');
 
 test('when singleNumber is given [1,1,2,4,2], it returns 4', () => {
     expect(singleNumber([1,1,2,4,2])).toBe(4);
@@ -20,4 +21,18 @@ test('when intersect is given nums1 = [1,2,2,1], nums2 = [2,2], it should return
 
 test('when intersect is given nums1 = [4,9,5], nums2 = [9,4,9,8,4], is should return [4,9]', () => {
     expect(intersect([4,9,5], [9,4,9,8,4]).sort()).toEqual([4,9].sort());
+})
+
+test('when twoSum is given nums = [3,2,4], target = 6, it should return [1,2]', () => {
+    expect(twoSum([3,2,4], 6).sort()).toEqual([1,2]);
+})
+
+test('when twoSum is given nums = [2,7,11,15], target = 9 it should return [0,1]', () => {
+    expect(twoSum([2,7,11,15], 9).sort()).toEqual([0,1]);
+})
+
+test('twoSum should not return the same index given an array with duplicate elements', () => {
+    expect(twoSum([3,3], 6).sort()).toEqual([0,1]);
+    expect(twoSum([3,3], 6).sort()).not.toEqual([0,0]);
+    expect(twoSum([3,3], 6).sort()).not.toEqual([1,1]);
 })

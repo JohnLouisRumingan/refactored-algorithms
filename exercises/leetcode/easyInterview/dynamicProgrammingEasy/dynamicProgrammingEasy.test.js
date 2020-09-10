@@ -1,4 +1,5 @@
 const maxProfit = require('./bestTimeToBuyAndSellStock');
+const maxStairs = require('./climbStairs');
 
 test('when maxProfit is given [7,1,5,3,6,4] it should return 5', () => {
     expect(maxProfit([7,1,5,3,6,4])).toBe(5);

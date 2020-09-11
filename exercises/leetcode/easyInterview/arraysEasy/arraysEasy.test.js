@@ -2,6 +2,7 @@ const singleNumber = require('./singleNumber');
 const rotate = require('./rotateArray');
 const intersect = require('./intersectionTwoArraysII');
 const twoSum = require('./twoSum');
+const containsDuplicate = require('./containsDuplicate');
 
 test('when singleNumber is given [1,1,2,4,2], it returns 4', () => {
     expect(singleNumber([1,1,2,4,2])).toBe(4);
@@ -35,4 +36,16 @@ test('twoSum should not return the same index given an array with duplicate elem
     expect(twoSum([3,3], 6).sort()).toEqual([0,1]);
     expect(twoSum([3,3], 6).sort()).not.toEqual([0,0]);
     expect(twoSum([3,3], 6).sort()).not.toEqual([1,1]);
+})
+
+test('when containsDuplicate is given [1,2,3,1] it should return true', () => {
+    expect(containsDuplicate([1,2,3,1])).toBe(true);
+})
+
+test('when containsDuplicate is given [1,2,3,4] it should return false', () => {
+    expect(containsDuplicate([1,2,3,4])).toBe(false);
+})
+
+test('when containsDuplicate is given [1,1,1,3,3,4,3,2,4,2] it should return true', () => {
+    expect(containsDuplicate([1,1,1,3,3,4,3,2,4,2])).toBe(true);
 })

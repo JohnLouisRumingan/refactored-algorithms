@@ -3,6 +3,7 @@ const rotate = require('./rotateArray');
 const intersect = require('./intersectionTwoArraysII');
 const twoSum = require('./twoSum');
 const containsDuplicate = require('./containsDuplicate');
+const plusOne = require('./plusOne');
 
 test('when singleNumber is given [1,1,2,4,2], it returns 4', () => {
     expect(singleNumber([1,1,2,4,2])).toBe(4);
@@ -48,4 +49,16 @@ test('when containsDuplicate is given [1,2,3,4] it should return false', () => {
 
 test('when containsDuplicate is given [1,1,1,3,3,4,3,2,4,2] it should return true', () => {
     expect(containsDuplicate([1,1,1,3,3,4,3,2,4,2])).toBe(true);
+})
+
+test('when plusOne gets digits = [1,2,3], it returns [1,2,4]', () => {
+    expect(plusOne([1,2,3])).toStrictEqual([1,2,4]);
+})
+
+test('when plusOne gets digits = [4,3,2,1], it returns [4,3,2,2]', () => {
+    expect(plusOne([4,3,2,1])).toStrictEqual([4,3,2,2]);
+})
+
+test('when plusOne gets an array of [9,9,9] it correectly adds a new integer in front', () => {
+    expect(plusOne([9,9,9])).toStrictEqual([1,0,0,0]);
 })

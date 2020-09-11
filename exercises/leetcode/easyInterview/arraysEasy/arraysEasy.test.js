@@ -4,6 +4,7 @@ const intersect = require('./intersectionTwoArraysII');
 const twoSum = require('./twoSum');
 const containsDuplicate = require('./containsDuplicate');
 const plusOne = require('./plusOne');
+const moveZeroes = require('./moveZeroes');
 
 test('when singleNumber is given [1,1,2,4,2], it returns 4', () => {
     expect(singleNumber([1,1,2,4,2])).toBe(4);
@@ -62,3 +63,9 @@ test('when plusOne gets digits = [4,3,2,1], it returns [4,3,2,2]', () => {
 test('when plusOne gets an array of [9,9,9] it correectly adds a new integer in front', () => {
     expect(plusOne([9,9,9])).toStrictEqual([1,0,0,0]);
 })
+
+// test('when moveZeroes is given [0,1,0,3,12] it should return [1,3,12,0,0]', () => {
+//     const nums = [0,1,0,3,12];
+//     moveZeroes(nums);
+//     expect(moveZeroes([0,1,0,3,12])).toEqual(nums);
+// })

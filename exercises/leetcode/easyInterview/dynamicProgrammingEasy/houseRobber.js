@@ -52,4 +52,8 @@ var rob = function(nums) {
     //this sequence is similar to fibonnaci 
 };
 
+// time: O(n^2) due to tempSub map 
+// space: O(n) due to dp, tempSub and Math.max
+
+
 module.exports = rob;

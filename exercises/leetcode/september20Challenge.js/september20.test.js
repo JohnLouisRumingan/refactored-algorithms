@@ -3,6 +3,7 @@ const wordPattern = require("./wordPattern")
 const sumRootToLeaf = require("./sumRootToLeafBinary")
 const compareVersion = require("./compareVersionNumbers")
 const getHint = require("./bullsAndCows");
+const maxProduct = require('./maxProductSubarray');
 
 function TreeNode(val, left, right) {
     this.val = (val===undefined ? 0 : val)
@@ -63,6 +64,13 @@ test('when compareVersion is given 1.01 and 1.001 it returns 0', () =>{
 test('when compareVersion is given 1.0 and 1.0.0 it returns 0', () =>{
     expect(compareVersion("1.0", "1.0.0")).toBe(0);
 })
+
+test('maxProductSubarray returns the provided test cases', () => {
+    expect(maxProduct([2,3,-2,4])).toBe(6);
+    expect(maxProduct([-2,0,-1])).toBe(0);
+})
+
+
 
 // test('when getHint is given ""43800797115925613013", "60371817651755202260", it returns "2A12B"', () => {
 //     expect(getHint("43800797115925613013", "60371817651755202260")).toBe("2A12B")

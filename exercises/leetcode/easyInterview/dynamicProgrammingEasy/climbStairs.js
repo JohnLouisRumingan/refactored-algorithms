@@ -44,7 +44,7 @@ function climbStairs(i, n, memo){
         return memo[i];
     }
     memo[i] = climbStairs(i+1, n, memo) + climbStairs(i+2, n, memo);
-    return memo;
+    return memo[i];
 }
 
 

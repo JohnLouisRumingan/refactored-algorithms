@@ -45,10 +45,10 @@ test('houseRobber does not compare two subarrays starting at i=0 and i=1', () =>
     expect(rob([2,1,1,2])).not.toBe(3);
 })
 
-// test('when maxStairs is given an input of 2 it should return 2', () => {
-//     expect(maxStairs(2)).toBe(2);
-// })
+test('when maxStairs is given an input of 2 it should return 2', () => {
+    expect(maxStairs(2)).toBe(2);
+})
 
-// test('when maxStairs is given an input of 3, it should return 3', () => {
-//     expect(maxStars(3)).toBe(3);
-// })
+test('when maxStairs is given an input of 3, it should return 3', () => {
+    expect(maxStairs(3)).toBe(3);
+})

@@ -4,6 +4,7 @@ const sumRootToLeaf = require("./sumRootToLeafBinary")
 const compareVersion = require("./compareVersionNumbers")
 const getHint = require("./bullsAndCows");
 const maxProduct = require('./maxProductSubarray');
+const lastWord = require('./lengthLastWord');
 
 function TreeNode(val, left, right) {
     this.val = (val===undefined ? 0 : val)
@@ -68,6 +69,17 @@ test('when compareVersion is given 1.0 and 1.0.0 it returns 0', () =>{
 test('maxProductSubarray returns the provided test cases', () => {
     expect(maxProduct([2,3,-2,4])).toBe(6);
     expect(maxProduct([-2,0,-1])).toBe(0);
+})
+
+test('when lastWord is given "Hello World" it should return 5', () => {
+    expect(lastWord("Hello world")).toBe(5);
+})
+
+test('when lastWord is given multiple spaces, it should return the correct count', () => {
+    expect(lastWord("a   b    ")).toBe(1);
+    expect(lastWord("a   b    ")).not.toBe(0);
+    expect(lastWord("  ")).toBe(0);
+    expect(lastWord("  a  ")).toBe(1);
 })
 
 

@@ -5,6 +5,7 @@ const compareVersion = require("./compareVersionNumbers")
 const getHint = require("./bullsAndCows");
 const maxProduct = require('./maxProductSubarray');
 const lastWord = require('./lengthLastWord');
+const gasStation = require('./gasStation');
 
 function TreeNode(val, left, right) {
     this.val = (val===undefined ? 0 : val)
@@ -80,6 +81,14 @@ test('when lastWord is given multiple spaces, it should return the correct count
     expect(lastWord("a   b    ")).not.toBe(0);
     expect(lastWord("  ")).toBe(0);
     expect(lastWord("  a  ")).toBe(1);
+})
+
+test('when gasStation is given gas  = [1,2,3,4,5], cost = [3,4,5,1,2] it returns 3', () => {
+    expect(gasStation([1,2,3,4,5], [3,4,5,1,2])).toBe(3);
+})
+
+test('when gasStation is given gas  = [2,3,4], cost = [3,4,3] it returns -1', () => {
+    expect(gasStation([2,3,4], [3,4,3])).toBe(-1);
 })
 
 

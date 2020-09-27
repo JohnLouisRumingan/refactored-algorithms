@@ -33,15 +33,14 @@ var firstUniqChar = function(s) {
     let arr = s.split('');
     
     for(let i=0; i<arr.length; i++){
-        
         let char = arr[i];
-        if(frequency[char]) frequency[char] += 1;
-        else if(!frequency[char]) frequency[char] = 1;
+        frequncy[char]? frequency[char]++ : frequency[char] = 1;
     }
     
     for(let i=0; i<arr.length; i++){
-        
         if(frequency[arr[i]] === 1) return i;
         else if(frequency[arr[i]] !== 1 && i === arr.length-1) return -1;
     }
 };
+
+// time complexity: O(2n), space complexity: O(n)

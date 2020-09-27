@@ -34,7 +34,7 @@ var firstUniqChar = function(s) {
     
     for(let i=0; i<arr.length; i++){
         let char = arr[i];
-        frequncy[char]? frequency[char]++ : frequency[char] = 1;
+        frequency[char]? frequency[char]++ : frequency[char] = 1;
     }
     
     for(let i=0; i<arr.length; i++){
@@ -44,3 +44,6 @@ var firstUniqChar = function(s) {
 };
 
 // time complexity: O(2n), space complexity: O(n)
+
+
+module.exports = firstUniqChar;

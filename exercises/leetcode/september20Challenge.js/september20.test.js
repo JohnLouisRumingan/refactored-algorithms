@@ -6,6 +6,7 @@ const getHint = require("./bullsAndCows");
 const maxProduct = require('./maxProductSubarray');
 const lastWord = require('./lengthLastWord');
 const gasStation = require('./gasStation');
+const subLessK = require('./subarrayProduct')
 
 function TreeNode(val, left, right) {
     this.val = (val===undefined ? 0 : val)
@@ -91,6 +92,9 @@ test('when gasStation is given gas  = [2,3,4], cost = [3,4,3] it returns -1', ()
     expect(gasStation([2,3,4], [3,4,3])).toBe(-1);
 })
 
+test('when subarrayProductLessThanK is given nums = [10, 5, 2, 6], k = 100 it should return 8', () => {
+    expect(subLessK([10,5,2,6], 100)).toBe(8);
+})
 
 
 // test('when getHint is given ""43800797115925613013", "60371817651755202260", it returns "2A12B"', () => {

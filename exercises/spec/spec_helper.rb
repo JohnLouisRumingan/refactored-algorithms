@@ -5,6 +5,9 @@
 # files.
 #
 
-require_relative "../flatiron/euler/project_euler_power_digit_sum.rb"
+euler = "../flatiron/euler"
+
+require_relative euler + "/project_euler_power_digit_sum.rb"
+require_relative euler + "/oo_multiples.rb"
 
 require 'base64'

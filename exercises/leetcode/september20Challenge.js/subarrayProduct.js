@@ -21,6 +21,8 @@ Note:
  * @param {number} k
  * @return {number}
  */
+
+//  naive, time: O(n^2), space: O(1);
 var numSubarrayProductLessThanK = function(nums, k) {
     let output = 0;
     
@@ -39,4 +41,40 @@ var numSubarrayProductLessThanK = function(nums, k) {
     return output;
 };
 
-module.exports = numSubarrayProductLessThanK;
+var optimalSolution = function(nums, k){
+
+    let pointer=0; 
+
+    let total = 0;
+    let runningTotal = 1;
+    let totalElements = 0;
+    // use two pointers for indices. Once k threshold is reached, calculate number of elements 
+    // and add it to to total. Then move the pointers starting from the threshold. 
+
+    while(pointer < nums.length){
+
+        let num = nums[pointer];
+
+        if(num *= runningTotal < k){
+            totalElements ++;
+            runningTotal *= num;
+            total += totalElements;
+        }
+        else{
+            if(num < k){
+                totalElements = 1;
+                runningTotal = num;
+                total += totalElements;
+            }
+            totalElements = 0;
+        }
+
+
+        pointer++;
+    }
+
+
+    return total;
+}
+
+module.exports = optimalSolution;

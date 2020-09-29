@@ -12,20 +12,17 @@ describe "Duplicate" do
 
     describe "#duplicates" do 
         it 'returns true if there is a duplicate element in the argument' do 
-            expect(Duplicate.new([1,2,3,1]).check_duplicate).to eq(true)
+            expect(Duplicate.new([1,1,1,3,3,4,3,2,4,2]).check_duplicate).to eq(true)
+        end 
+
+        it 'returns false if there is not a duplicate element in the argument' do 
+            expect(Duplicate.new([1,2,3,4]).check_duplicate).to eq(false)
         end 
     end 
-  
-#     describe "#collect_multiples" do
-#       it 'returns the correct multiples of natural numbers below 10' do
-#         expect(DUplicate.new(10).collect_multiples).to eq([3,5,6,9])
-#       end
-  
-#     describe "project euler solution" do
-#       it "returns the correct solution" do
-#         expect(app.sum_multiples).to eq(233168)
-#       end
-#     end
-#   end
 
+    describe "project euler solution" do
+        it "returns the correct solution" do 
+            expect(app.check_duplicate).to eq(true)
+        end 
+    end
 end

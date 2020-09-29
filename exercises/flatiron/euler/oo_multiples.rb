@@ -5,8 +5,6 @@
 class Multiples
 
     attr_reader :limit, :multiples
-    attr_writer
-    attr_accessor
 
     def initialize(limit)
         @limit = limit-1 # only utilize numbers below limit

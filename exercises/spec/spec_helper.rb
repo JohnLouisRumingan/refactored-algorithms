@@ -9,5 +9,6 @@ euler = "../flatiron/euler"
 
 require_relative euler + "/project_euler_power_digit_sum.rb"
 require_relative euler + "/oo_multiples.rb"
+require_relative euler + "/oo_contains_duplicate.rb"
 
 require 'base64'

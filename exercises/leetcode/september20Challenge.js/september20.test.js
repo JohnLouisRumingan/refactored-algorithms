@@ -6,7 +6,8 @@ const getHint = require("./bullsAndCows");
 const maxProduct = require('./maxProductSubarray');
 const lastWord = require('./lengthLastWord');
 const gasStation = require('./gasStation');
-const subLessK = require('./subarrayProduct')
+const subLessK = require('./subarrayProduct');
+const firstMissingPositive = require('./firstMissingPositive');
 
 function TreeNode(val, left, right) {
     this.val = (val===undefined ? 0 : val)
@@ -94,6 +95,22 @@ test('when gasStation is given gas  = [2,3,4], cost = [3,4,3] it returns -1', ()
 
 test('when subarrayProductLessThanK is given nums = [10, 5, 2, 6], k = 100 it should return 8', () => {
     expect(subLessK([10,5,2,6], 100)).toBe(8);
+})
+
+test('when firstMissingPositive is given Input: [1,2,0] it should return 3', () => {
+    expect(firstMissingPositive([1,2,0])).toBe(3);
+})
+
+test('when firstMissingPositive is given Input: [3,4,-1,1] it should return 2', () => {
+    expect(firstMissingPositive([3,4,-1,1])).toBe(2);
+})
+
+test('when firstMissingPositive is given [7,8,9,11,12] it should return 1', () => {
+    expect(firstMissingPositive([7,8,9,11,12])).toBe(1);
+})
+
+test('when firstMissingPositive is given [1,1,2,2,5] it should return 3', () => {
+    expect(firstMissingPositive([1,1,2,2,5])).toBe(3);
 })
 
 

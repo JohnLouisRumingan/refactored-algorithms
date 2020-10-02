@@ -77,4 +77,4 @@ var optimalSolution = function(nums, k){
     return total;
 }
 
-module.exports = optimalSolution;
+module.exports = numSubarrayProductLessThanK;

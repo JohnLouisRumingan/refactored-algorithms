@@ -41,7 +41,7 @@ var intersect = function(nums1, nums2) {
     let d1 = {};
 
     for(let i=0; i<nums1.length; i++){
-        d1[nums[i]]? d1[nums[i]]++ : d1[nums[i]] = 1;
+        d1[nums1[i]]? d1[nums1[i]]++ : d1[nums1[i]] = 1;
     }
 
     for(let i=0; i<nums2.length; i++){
@@ -54,6 +54,7 @@ var intersect = function(nums1, nums2) {
         }
     }
 
+    console.log(intersection)
     return intersection;
 }
 

@@ -26,7 +26,7 @@ Output: true
  * @return {boolean}
  */
 // review 
-var containsDup = function(nums) {
+var containsDuplicateReview = function(nums) {
 
 
     let numDict = {};
@@ -44,28 +44,6 @@ var containsDup = function(nums) {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /**
  * @param {number[]} nums
  * @return {boolean}
@@ -76,7 +54,7 @@ var containsDuplicate = function(nums) {
     
     for(let i=0; i<nums.length; i++){
         if(dict[nums[i]]) return true;
-        dict[nums[i]] = i;
+        dict[nums[i]] = 1;
     }
     return false;
 };

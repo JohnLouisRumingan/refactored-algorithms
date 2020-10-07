@@ -56,8 +56,6 @@ var maxProfit = function(prices) {
         let prevPrice = prices[i-1];
         const finalStockIndex = prices.length-1;
         
-        console.log("currentPrice", curPrice, "previous price", prevPrice);
-        
         if(prevPrice < curPrice){
             
             if(currentStock != null && i == finalStockIndex){

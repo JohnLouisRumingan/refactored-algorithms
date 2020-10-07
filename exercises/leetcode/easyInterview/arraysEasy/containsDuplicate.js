@@ -20,6 +20,52 @@ Output: true
 
 */
 
+
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+// review 
+var containsDup = function(nums) {
+
+
+    let numDict = {};
+
+
+    for(let i=0; i<nums.length; i++){
+
+        if(!numDict[nums[i]]){
+            numDict[nums[i]] = 1;
+        }
+        else if(numDict[nums[i]]) return true; 
+    }
+
+    return false;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**
  * @param {number[]} nums
  * @return {boolean}
@@ -29,7 +75,7 @@ var containsDuplicate = function(nums) {
     let dict = {};
     
     for(let i=0; i<nums.length; i++){
-        if(dict.hasOwnProperty(nums[i])) return true;
+        if(dict[nums[i]]) return true;
         dict[nums[i]] = i;
     }
     return false;

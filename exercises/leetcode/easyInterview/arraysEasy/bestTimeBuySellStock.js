@@ -59,11 +59,11 @@ var maxProfit = function(prices) {
         if(prevPrice < curPrice){
             
             if(currentStock != null && i == finalStockIndex){
-                console.log("final stock index case with held stock", currentStock, prices[i])
+                // console.log("final stock index case with held stock", currentStock, prices[i])
                 profit += prices[i] - currentStock;
             }
             else if(currentStock == null && i == finalStockIndex){
-                    console.log("final stock index case without held stock", currentStock, prices[i])
+                    // console.log("final stock index case without held stock", currentStock, prices[i])
                     currentStock = prevPrice;
                     profit += prices[i] - currentStock;
             }
@@ -74,16 +74,16 @@ var maxProfit = function(prices) {
         else if(prevPrice > curPrice){
             if(currentStock != null){
                 profit += (prevPrice - currentStock);
-                console.log("selling stock current stock:", currentStock, "profit:", profit);
+                // console.log("selling stock current stock:", currentStock, "profit:", profit);
                 currentStock = null;
-                console.log("sold stock", currentStock)
+                // console.log("sold stock", currentStock)
             }
         }
         else if(prevPrice == curPrice && i == finalStockIndex && currentStock!= null){
-            console.log("final stock index case with held stock and equal to previous", currentStock, prices[i])
+            // console.log("final stock index case with held stock and equal to previous", currentStock, prices[i])
             profit += prices[i] - currentStock;
         }
-        console.log("profit", profit, "current stock held", currentStock)
+        // console.log("profit", profit, "current stock held", currentStock)
     }
     
     

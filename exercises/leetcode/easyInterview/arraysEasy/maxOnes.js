@@ -14,6 +14,60 @@ Note:
     The length of input array is a positive integer and will not exceed 10,000
 */
 
+
+
+var findMaxConsecutiveOnesReview = function(nums) {
+
+    let max = 0;
+    let current = 0;
+
+    for(let i=0; i<nums.length; i++){
+        let num = nums[i];
+
+        if(num == 1){
+            current++;
+            if(current > max) max = current;
+        }
+        else{
+            current = 0;
+        }
+    }
+
+    return max;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**
  * @param {number[]} nums
  * @return {number}

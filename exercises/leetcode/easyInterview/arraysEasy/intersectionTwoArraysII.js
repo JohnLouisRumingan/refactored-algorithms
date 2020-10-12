@@ -54,7 +54,7 @@ var intersect = function(nums1, nums2) {
         }
     }
 
-    console.log(intersection)
+    // console.log(intersection)
     return intersection;
 }
 

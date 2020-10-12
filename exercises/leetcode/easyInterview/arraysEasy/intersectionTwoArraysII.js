@@ -29,26 +29,60 @@ Follow up:
  * @param {number[]} nums2
  * @return {number[]}
  */
+
+//  review, v2
 var intersect = function(nums1, nums2) {
-    
-    let hash1 = {};
-    let answer = [];
-    
+   
+    // create dictionary of first array 
+    // while traversing second array, look up dictionary and if it exists, remove one from value and store it in a new array 
+    // return array 
+
+    let intersection = [];
+    let d1 = {};
+
     for(let i=0; i<nums1.length; i++){
-        hash1[nums1[i]]? hash1[nums1[i]]++ : hash1[nums1[i]] = 1;
+        d1[nums1[i]]? d1[nums1[i]]++ : d1[nums1[i]] = 1;
     }
-    
+
     for(let i=0; i<nums2.length; i++){
-        if(hash1.hasOwnProperty(nums2[i])){
-            answer.push(nums2[i]);
-            hash1[nums2[i]]--;
-            if(hash1[nums2[i]]===0){
-                delete hash1[nums2[i]];
-            }
+        let num = nums2[i];
+
+        if(d1[num]){
+            d1[num]--;
+            intersection.push(num);
+            if(d1[num] < 1) delete d1[num];
         }
     }
+
+    console.log(intersection)
+    return intersection;
+}
+
+/**
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number[]}
+ */
+// var intersect = function(nums1, nums2) {
     
-    return answer;
-};
+//     let hash1 = {};
+//     let answer = [];
+    
+//     for(let i=0; i<nums1.length; i++){
+//         hash1[nums1[i]]? hash1[nums1[i]]++ : hash1[nums1[i]] = 1;
+//     }
+    
+//     for(let i=0; i<nums2.length; i++){
+//         if(hash1.hasOwnProperty(nums2[i])){
+//             answer.push(nums2[i]);
+//             hash1[nums2[i]]--;
+//             if(hash1[nums2[i]]===0){
+//                 delete hash1[nums2[i]];
+//             }
+//         }
+//     }
+    
+//     return answer;
+// };
 
 module.exports = intersect;
